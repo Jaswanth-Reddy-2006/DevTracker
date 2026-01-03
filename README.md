@@ -59,3 +59,40 @@ MIT — see `LICENSE`
 
 ---
 If you'd like, I can add screenshots, a short demo video, or a one-page judging checklist to this repo.
+
+## About this application
+
+DevTracker is a client-side task tracker that helps organize tasks into groups and visualize progress.
+
+- Data model: tasks have a title, description, group, priority, and completion state.
+- Storage: all data is stored in the browser's `localStorage` so no backend is required.
+- Main UI pieces:
+	- `Sidebar` — navigation and group filters
+	- `Dashboard` — progress summary and charts
+	- `Tasks` — list and task operations (add/edit/complete)
+	- `AddTaskModal` — create new tasks
+	- `ThemeToggle` — light/dark mode
+
+## How it works (brief)
+
+1. The app initializes state from `localStorage` via a context provider in `src/context/AppContext.jsx`.
+2. User actions (add/edit/complete) dispatch actions located in `src/context/actions.js` which update context state.
+3. State changes are synchronized back to `localStorage` so data persists across reloads.
+4. UI components read context state to render lists, groupings, and progress bars.
+
+## Run locally
+
+Install and start the dev server:
+
+```bash
+npm install
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+The app is ready to deploy on Vercel using the provided `vercel.json` (build: `npm run build`, output: `dist`).
