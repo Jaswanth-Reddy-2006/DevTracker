@@ -82,17 +82,20 @@ DevTracker is a client-side task tracker that helps organize tasks into groups a
 
 ## Run locally
 
-Install and start the dev server:
+## Overview
 
-```bash
-npm install
-npm run dev
-```
+DevTracker helps users create and manage tasks organized into groups. It emphasizes simplicity and offline-first operation by storing data in the browser, so users can track progress without a backend.
 
-Build for production:
+### Key features
+- Group tasks into projects or categories
+- Create, edit, and complete tasks
+- Priority and description fields per task
+- Progress visualization on a dashboard
+- Light / dark theme toggle
 
-```bash
-npm run build
-```
+### How it works (brief)
+- All application state is managed client-side and persisted to the browser's `localStorage`.
+- Components read and update a central context that holds tasks and groups.
 
-The app is ready to deploy on Vercel using the provided `vercel.json` (build: `npm run build`, output: `dist`).
+### Intended audience
+DevTracker is ideal for students, judges, and small teams who want a simple, self-contained demo of a task-tracking app.
