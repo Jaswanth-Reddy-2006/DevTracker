@@ -1,101 +1,60 @@
-# DevTracker
+🚀 DevTracker
 
-DevTracker is a lightweight task-tracking web application built with React and Vite. It is prepared for judges and easy deployment to Vercel.
+Track what you actually build. Not what you promise.
 
-## Live Demo
-Deploy to Vercel (recommended). After import, use build command `npm run build` and output directory `dist`.
+DevTracker is an intelligent productivity and skill-tracking prototype designed for students and developers.
+Unlike traditional to-do apps that rely on manual checklists, DevTracker focuses on action-based progress, visual intelligence, and accountability-driven workflows.
 
-## Highlights
-- Group tasks by project
-- Dashboard with progress visualization
-- Light/dark theme toggling
-- Local storage persistence (no backend required)
 
-## Tech Stack
-- React 18 + Vite
-- Tailwind CSS for styling
+🔗 Live Prototype
 
-## Quick Start (Local)
-1. Install dependencies
+👉 Demo: https://dev-tracker-mu.vercel.app/
 
-```bash
-npm install
-```
 
-2. Run development server
 
-```bash
-npm run dev
-```
+🧠 Problem Statement
 
-3. Build for production
+	Most productivity tools fail because they:
 
-```bash
-npm run build
-```
+	Depend on manual task completion
 
-4. Preview production build
+	Cannot distinguish real learning from distractions
 
-```bash
-npm run preview
-```
+	Offer no meaningful accountability or progress insight
 
-## For Judges
-- The app runs fully in the browser; no server setup required.
-- Build output is placed in `dist/` and ready for static hosting.
-- See `vercel.json` for Vercel-ready configuration.
+	Feel static and disconnected from actual effort
 
-## Project Structure (important files)
-- `src/` — application source code
-- `index.html` — Vite entry
-- `vercel.json` — Vercel build config
-- `package.json` — scripts and metadata
+	As a result, users appear productive without building real skills.
 
-## Notes
-- CI is configured via GitHub Actions at `.github/workflows/ci.yml` (runs `npm ci` + `npm run build`).
+💡 Solution Overview
 
-## License
-MIT — see `LICENSE`
+	DevTracker reimagines task tracking by:
 
----
-If you'd like, I can add screenshots, a short demo video, or a one-page judging checklist to this repo.
+	Organizing work into projects and groups
 
-## About this application
+	Visually simulating auto-progress and verification
 
-DevTracker is a client-side task tracker that helps organize tasks into groups and visualize progress.
+	Providing live dashboards instead of static lists
 
-- Data model: tasks have a title, description, group, priority, and completion state.
-- Storage: all data is stored in the browser's `localStorage` so no backend is required.
-- Main UI pieces:
-	- `Sidebar` — navigation and group filters
-	- `Dashboard` — progress summary and charts
-	- `Tasks` — list and task operations (add/edit/complete)
-	- `AddTaskModal` — create new tasks
-	- `ThemeToggle` — light/dark mode
+	Encouraging consistency through group-based accountability
 
-## How it works (brief)
 
-1. The app initializes state from `localStorage` via a context provider in `src/context/AppContext.jsx`.
-2. User actions (add/edit/complete) dispatch actions located in `src/context/actions.js` which update context state.
-3. State changes are synchronized back to `localStorage` so data persists across reloads.
-4. UI components read context state to render lists, groupings, and progress bars.
+DevTracker - Tech Stack
+Frontend
+	React 18 - UI library
+	Vite - Build tool & dev server
+	Tailwind CSS - Styling framework
+	React Router - Client-side routing
+	Context API - State management
+Build & Deployment
+	npm - Package manager
+	Vercel - Hosting & deployment
+Backend & Database (To be added)
+	Firebase - Authentication, Firestore database, Cloud Storage
+	Google Cloud - Cloud services (Compute Engine, Cloud Functions, Cloud Storage)
+Development Tools
+	Git & GitHub - Version control
+	VS Code - Code editor
+	Node.js - Runtime environment
 
-## Run locally
 
-## Overview
-
-DevTracker helps users create and manage tasks organized into groups. It emphasizes simplicity and offline-first operation by storing data in the browser, so users can track progress without a backend.
-
-### Key features
-- Group tasks into projects or categories
-- Create, edit, and complete tasks
-- Priority and description fields per task
-- Progress visualization on a dashboard
-- Light / dark theme toggle
-
-### How it works (brief)
-- All application state is managed client-side and persisted to the browser's `localStorage`.
-- Components read and update a central context that holds tasks and groups.
-
-### Intended audience
-DevTracker is ideal for students, judges, and small teams who want a simple, self-contained demo of a task-tracking app.
