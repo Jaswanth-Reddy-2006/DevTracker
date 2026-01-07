@@ -12,14 +12,3 @@ export function animateNumber(from, to) {
   }
   return values
 }
-
-export function getRandomActivity() {
-  const activities = [
-    { name: 'Coding', type: 'active', color: 'bg-green-500' },
-    { name: 'YouTube', type: 'educational', color: 'bg-blue-500' },
-    { name: 'Instagram', type: 'distraction', color: 'bg-red-500' },
-    { name: 'LeetCode', type: 'active', color: 'bg-yellow-500' },
-    { name: 'Documentation', type: 'educational', color: 'bg-blue-500' },
-  ]
-  return activities[Math.floor(Math.random() * activities.length)]
-}

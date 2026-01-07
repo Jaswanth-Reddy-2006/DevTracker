@@ -1,5 +1,5 @@
 import { useContext, useCallback } from 'react'
-import AppContext from '../context/AppContext'
+import { AppContext } from '../context/AppContext'
 
 export function useAppData() {
   const context = useContext(AppContext)
