@@ -115,7 +115,7 @@ export default function Insights() {
             <div className="flex items-center gap-2 mb-2">
               <div className="w-2 h-6 bg-blue-600 rounded-full"></div>
               <h1 className="text-4xl font-black tracking-tighter" style={{ color: 'var(--text-primary)' }}>
-                SYSTEM_INSIGHTS
+                System Insights
               </h1>
             </div>
             <p className="font-bold text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--text-tertiary)' }}>
@@ -191,8 +191,8 @@ export default function Insights() {
               </div>
             </div>
             <div className="hidden md:flex flex-col items-end opacity-40 group-hover:opacity-100 transition-opacity">
-              <span className="text-[10px] font-black uppercase tracking-widest">Node_Status</span>
-              <span className="text-[10px] font-black uppercase tracking-widest text-green-500">Active_Processing</span>
+              <span className="text-[10px] font-black uppercase tracking-widest">System Status</span>
+              <span className="text-[10px] font-black uppercase tracking-widest text-green-500">Processing Active</span>
             </div>
           </div>
         </Card>
@@ -227,7 +227,7 @@ export default function Insights() {
           <div className="lg:col-span-8">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-black tracking-tighter uppercase" style={{ color: 'var(--text-primary)' }}>
-                Activity_Architecture
+                Activity Overview
               </h2>
               <span className="text-[10px] font-black uppercase tracking-widest text-blue-500">Real-Time Sync</span>
             </div>
@@ -260,28 +260,28 @@ export default function Insights() {
                 <div className="flex gap-6">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                    <span className="text-[9px] font-black uppercase tracking-widest opacity-60">Focus_Level</span>
+                    <span className="text-[9px] font-black uppercase tracking-widest opacity-60">Focus Level</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700"></div>
-                    <span className="text-[9px] font-black uppercase tracking-widest opacity-60">Idle_Time</span>
+                    <span className="text-[9px] font-black uppercase tracking-widest opacity-60">Idle Time</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 bg-[var(--bg-tertiary)] px-3 py-1.5 rounded-full border border-[var(--border-color)]">
                   <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-                  <p className="text-[9px] font-black uppercase tracking-widest">Telemetry_Active</p>
+                  <p className="text-[9px] font-black uppercase tracking-widest">System Monitoring</p>
                 </div>
               </div>
             </Card>
 
             <h2 className="text-xl font-black mt-12 mb-6 tracking-tighter uppercase" style={{ color: 'var(--text-primary)' }}>
-              Protocol_History
+              Activity History
             </h2>
             <div className="space-y-3">
               {filteredTimeline.length === 0 ? (
                 <Card padding={true} className="text-center py-16 border-dashed border-2 border-[var(--border-color)]">
                   <p className="text-xs font-black uppercase tracking-[0.2em]" style={{ color: 'var(--text-tertiary)' }}>
-                    NO_DATA_AVAILABLE
+                    No Data Available
                   </p>
                 </Card>
               ) : (
@@ -328,7 +328,7 @@ export default function Insights() {
           <div className="lg:col-span-4 space-y-8">
             <div>
               <h2 className="text-xl font-black mb-6 tracking-tighter uppercase" style={{ color: 'var(--text-primary)' }}>
-                Weekly_Pulse
+                Weekly Activity
               </h2>
               <div className="space-y-4">
                 {[
@@ -359,14 +359,14 @@ export default function Insights() {
             </div>
 
             <Card className="border-2 border-dashed border-blue-500/30 bg-blue-500/5 p-6">
-              <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-500 mb-6">Efficiency_Metrics</h3>
+              <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-500 mb-6">Efficiency Metrics</h3>
               <div className="grid grid-cols-2 gap-6">
                 <div className="p-4 bg-[var(--bg-secondary)] rounded-2xl border border-[var(--border-color)]">
-                  <p className="text-[9px] font-black uppercase tracking-widest opacity-40 mb-1">Peak_Flow</p>
+                  <p className="text-[9px] font-black uppercase tracking-widest opacity-40 mb-1">Peak Flow</p>
                   <p className="text-xl font-black text-blue-500">MORNING</p>
                 </div>
                 <div className="p-4 bg-[var(--bg-secondary)] rounded-2xl border border-[var(--border-color)]">
-                  <p className="text-[9px] font-black uppercase tracking-widest opacity-40 mb-1">Top_Activity</p>
+                  <p className="text-[9px] font-black uppercase tracking-widest opacity-40 mb-1">Top Activity</p>
                   <p className="text-xl font-black text-indigo-500">CODING</p>
                 </div>
                 <div className="p-4 bg-[var(--bg-secondary)] rounded-2xl border border-[var(--border-color)]">
@@ -374,7 +374,7 @@ export default function Insights() {
                   <p className="text-xl font-black text-green-500">92%</p>
                 </div>
                 <div className="p-4 bg-[var(--bg-secondary)] rounded-2xl border border-[var(--border-color)]">
-                  <p className="text-[9px] font-black uppercase tracking-widest opacity-40 mb-1">Squad_Rank</p>
+                  <p className="text-[9px] font-black uppercase tracking-widest opacity-40 mb-1">Squad Rank</p>
                   <p className="text-xl font-black text-purple-500">#04</p>
                 </div>
               </div>
@@ -390,7 +390,7 @@ export default function Insights() {
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform">
                 <svg className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.45l8.1 14.1H3.9L12 5.45zM11 11v4h2v-4h-2zm0 6v2h2v-2h-2z"/></svg>
               </div>
-              <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-400 mb-4 relative z-10">System_Alert</h3>
+              <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-400 mb-4 relative z-10">System Alert</h3>
               <p className="text-sm font-bold leading-relaxed relative z-10">
                 Cognitive load detected as &quot;High&quot; during last session. Suggesting 15-minute cool down protocol.
               </p>

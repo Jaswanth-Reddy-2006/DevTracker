@@ -5,6 +5,7 @@ import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { collection, query, where, onSnapshot, doc } from 'firebase/firestore'
 import { useNotifications } from './NotificationContext'
 import axios from 'axios'
+import { emitEvent } from '../utils/eventClient'
 
 const AppContext = createContext()
 export { AppContext }
@@ -68,13 +69,36 @@ export function AppContextProvider({ children }) {
   }, [])
 
   const addTask = useCallback(async (task) => {
+    // Optimistic: add a local placeholder so UI shows the task immediately
+    const tempId = `temp-${Date.now()}`
+    const optimistic = {
+      id: tempId,
+      ...task,
+      createdAt: Date.now(),
+      status: task.status || 'In Progress',
+      progress: task.progress || 0,
+      userId: auth.currentUser?.uid || null,
+      _unsynced: true
+    }
+    setState(prev => ({ ...prev, tasks: [optimistic, ...(prev.tasks || [])] }))
+
     try {
       const config = await getAuthHeader()
-      await axios.post(`${API_URL}/tasks`, task, config)
+      const res = await axios.post(`${API_URL}/tasks`, task, config)
+      const created = res?.data
+      if (created) {
+        // Replace optimistic entry with server-provided task
+        setState(prev => ({ ...prev, tasks: [created, ...prev.tasks.filter(t => t.id !== tempId)] }))
+      } else {
+        // If server didn't return created object, mark as synced and remove _unsynced
+        setState(prev => ({ ...prev, tasks: prev.tasks.map(t => t.id === tempId ? ({ ...t, _unsynced: false }) : t) }))
+      }
       addNotification('Task created successfully', 'success')
     } catch (error) {
       console.error('Error adding task:', error)
-      addNotification('Failed to create task', 'error')
+      // Leave optimistic entry and mark unsynced; notify user the task is saved locally
+      setState(prev => ({ ...prev, tasks: prev.tasks.map(t => t.id === tempId ? ({ ...t, _unsynced: true }) : t) }))
+      addNotification('Task saved locally — sync failed', 'error')
     }
   }, [addNotification])
 
@@ -84,6 +108,11 @@ export function AppContextProvider({ children }) {
       await axios.put(`${API_URL}/tasks/${id}`, updates, config)
       if (updates.status === 'Completed') {
         addNotification('Task completed! +50 XP', 'success')
+        try {
+          emitEvent('task.completed', { taskId: id, updates })
+        } catch (err) {
+          console.warn('emit task.completed failed', err)
+        }
       }
     } catch (error) {
       console.error('Error updating task:', error)
@@ -107,6 +136,11 @@ export function AppContextProvider({ children }) {
       const config = await getAuthHeader()
       await axios.put(`${API_URL}/tasks/${id}`, { isVerified: true, status: 'Completed', progress: 100 }, config)
       addNotification('Task verified and completed!', 'success')
+      try {
+        emitEvent('task.completed', { taskId: id, verified: true })
+      } catch (err) {
+        console.warn('emit task.completed failed', err)
+      }
     } catch (error) {
       console.error('Error verifying task:', error)
       addNotification('Verification failed', 'error')

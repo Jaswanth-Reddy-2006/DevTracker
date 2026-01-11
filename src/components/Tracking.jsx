@@ -105,7 +105,7 @@ export default function Tracking() {
             </div>
             <div>
               <h1 className="text-4xl font-black tracking-tighter uppercase" style={{ color: 'var(--text-primary)' }}>
-                Usage_Telemetry
+                Activity Analytics
               </h1>
               <p className="text-[10px] font-black uppercase tracking-[0.3em]" style={{ color: 'var(--text-tertiary)' }}>
                 Real-time platform engagement analysis
@@ -116,7 +116,7 @@ export default function Tracking() {
             onClick={fetchTrackingData}
             className="mb-4 px-4 py-2 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-emerald-500 hover:text-white transition-all"
           >
-            Refresh_Feed
+            Refresh Data
           </button>
         </div>
 
@@ -165,7 +165,7 @@ export default function Tracking() {
                         : 'bg-emerald-600 text-white hover:bg-emerald-700 shadow-lg shadow-emerald-500/20'
                     }`}
                   >
-                    {isSessionActive ? 'Stop_Session' : 'Start_Session'}
+                    {isSessionActive ? 'Stop Session' : 'Start Session'}
                   </button>
                 </div>
               </div>
@@ -209,7 +209,7 @@ export default function Tracking() {
                         {item.icon}
                       </div>
                       <div className="flex flex-col items-end">
-                        <span className="text-[9px] font-black uppercase tracking-widest opacity-40">Load_Factor</span>
+                        <span className="text-[9px] font-black uppercase tracking-widest opacity-40">Usage Percent</span>
                         <span className="text-[10px] font-black text-emerald-500">{Math.round((item.timeSpent / totalTime) * 100)}%</span>
                       </div>
                     </div>
@@ -249,7 +249,7 @@ export default function Tracking() {
             {/* Activity Timeline */}
             <div>
               <h2 className="text-sm font-black mb-6 uppercase tracking-[0.3em] text-emerald-500 flex items-center gap-2">
-                <span className="w-8 h-px bg-emerald-500"></span> Live_Engagement_Feed
+                <span className="w-8 h-px bg-emerald-500"></span> Live Activity Feed
               </h2>
               <div className="space-y-3">
                 {recentEvents.length > 0 ? (

@@ -62,16 +62,16 @@ export default function Tasks() {
             <div className="w-2.5 h-8 bg-gradient-to-b from-blue-600 to-indigo-700 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.4)]"></div>
             <div>
               <h1 className="text-4xl font-black tracking-tighter uppercase leading-none" style={{ color: 'var(--text-primary)' }}>
-                PROTOCOL_QUEUE
+                Task Queue
               </h1>
               <div className="flex items-center gap-2 mt-1">
-                <span className="text-[8px] font-black text-blue-500 uppercase tracking-[0.4em]">Queue_Active</span>
+                <span className="text-[8px] font-black text-blue-500 uppercase tracking-[0.4em]">Queue Active</span>
                 <div className="w-1 h-1 bg-blue-500 rounded-full animate-pulse"></div>
               </div>
             </div>
           </div>
           <p className="text-[10px] font-black uppercase tracking-[0.3em] mt-3" style={{ color: 'var(--text-tertiary)' }}>
-            <span className="text-blue-500">{completedCount}</span>/{tasks.length} SYNCED • <span className="text-indigo-500">{completionRate}%</span> ACCURACY_INDEX
+            <span className="text-blue-500">{completedCount}</span>/{tasks.length} SYNCED • <span className="text-indigo-500">{completionRate}%</span> Accuracy Index
           </p>
         </div>
         <Button
@@ -79,7 +79,7 @@ export default function Tasks() {
           variant="primary"
           className="animate-slideUp shadow-xl px-10 py-4 text-[10px] uppercase tracking-[0.2em]"
         >
-          Initialize_Protocol
+          New Task
         </Button>
       </header>
 
@@ -149,13 +149,18 @@ export default function Tasks() {
                     <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
                       <div className="flex items-center gap-4">
                         <div className="text-[10px] font-mono text-blue-500/50">#{task.id?.substring(0, 8).toUpperCase()}</div>
-                        <h3 
-                          className="text-2xl font-black uppercase tracking-tight group-hover:text-blue-500 transition-colors cursor-pointer" 
-                          style={{ color: 'var(--text-primary)' }}
-                          onClick={() => setExpandedTask(expandedTask === task.id ? null : task.id)}
-                        >
-                          {task.name}
-                        </h3>
+                        <div style={{display: 'flex', alignItems: 'center', gap: 8}}>
+                          <h3 
+                            className="text-2xl font-black uppercase tracking-tight group-hover:text-blue-500 transition-colors cursor-pointer" 
+                            style={{ color: 'var(--text-primary)', margin: 0 }}
+                            onClick={() => setExpandedTask(expandedTask === task.id ? null : task.id)}
+                          >
+                            {task.name}
+                          </h3>
+                          {task._unsynced && (
+                            <span className="unsynced-pill" title="Not yet synced to server">Unsynced</span>
+                          )}
+                        </div>
                       </div>
                       <div className="flex gap-2">
                         <span className={`text-[8px] px-2 py-1 rounded border font-black uppercase tracking-widest ${

@@ -70,3 +70,59 @@
   --glass-bg: rgba(15, 23, 42, 0.7);
   --glass-border: rgba(30, 41, 59, 0.5);
 }
+
+/* Design tokens: typography and semantic aliases for analytics UI */
+:root {
+  /* Typography */
+  --font-family-base: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --type-h1: 28px;
+  --type-h2: 20px;
+  --type-h3: 16px;
+  --type-body: 14px;
+  --type-small: 12px;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.35;
+
+  /* KPI numeric sizing */
+  --kpi-size: 24px;
+  --kpi-weight: 700;
+
+  /* Semantic color aliases (analytics-focused)
+     - keep existing token names for compatibility but add explicit semantic names used by design spec */
+  --bg-base: #F6F7F9; /* very light gray canvas */
+  --surface: #FFFFFF; /* primary card surface */
+  --ink-900: #0F1720; /* heading / primary text */
+  --ink-600: #475569; /* body text */
+  --muted-400: #CBD5E1;
+
+  --primary-500: #2563EB; /* main accent for CTAs and positive deltas */
+  --success-500: #16A34A; /* improvement */
+  --warn-500: #F97316; /* warnings / neglected */
+  --danger-600: #DC2626; /* negative drop */
+
+  /* Heatmap scale (light -> dark) */
+  --heat-0: #ffffff;
+  --heat-1: #e6eefc;
+  --heat-2: #c7dbfb;
+  --heat-3: #93b7f9;
+  --heat-4: #2563EB;
+}
+
+/* Utility body defaults for layout consistency */
+body {
+  font-family: var(--font-family-base);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  line-height: var(--line-height-normal);
+}
+
+/* Small helper classes for analytics components */
+.kpi-value { font-size: var(--kpi-size); font-weight: var(--kpi-weight); color: var(--ink-900); }
+.kpi-delta { font-size: 12px; color: var(--ink-600); }
+.insight-headline { font-size: var(--type-h3); font-weight: var(--font-weight-semibold); color: var(--ink-900); }
+.muted { color: var(--text-tertiary); }

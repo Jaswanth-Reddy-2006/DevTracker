@@ -27,7 +27,7 @@ export default function Settings() {
             </div>
             <div>
               <h1 className="text-4xl font-black tracking-tighter" style={{ color: 'var(--text-primary)' }}>
-                SYSTEM_CONFIG
+                System Configuration
               </h1>
               <p className="text-[10px] font-black uppercase tracking-[0.3em]" style={{ color: 'var(--text-tertiary)' }}>
                 Mainframe Protocols & User Preferences
@@ -49,7 +49,7 @@ export default function Settings() {
                   idx === 0 ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20' : 'hover:bg-[var(--bg-tertiary)] opacity-60 hover:opacity-100'
                 }`}
               >
-                {item.label}_Config
+                {item.label} Config
               </button>
             ))}
             
@@ -59,7 +59,7 @@ export default function Settings() {
                 onClick={logout} 
                 className="w-full text-red-500 hover:bg-red-500/10 border-red-500/20 text-[10px] font-black uppercase tracking-widest"
               >
-                Terminate_Session
+                Logout
               </Button>
             </div>
           </div>
@@ -107,14 +107,14 @@ export default function Settings() {
 
             <section id="feedback">
               <h2 className="text-sm font-black mb-4 uppercase tracking-[0.3em] text-rose-500 flex items-center gap-2">
-                <span className="w-8 h-px bg-rose-500"></span> Signal_Report
+                <span className="w-8 h-px bg-rose-500"></span> System Report
               </h2>
               <Card padding={true} className="border-[var(--border-color)]">
                 <textarea 
                   placeholder="Submit system feedback..."
                   className="w-full bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-xl p-4 text-[11px] font-bold focus:outline-none focus:ring-2 focus:ring-rose-500/30 text-[var(--text-primary)] min-h-[100px] mb-4 hover:border-rose-500/50 transition-all"
                 ></textarea>
-                <Button variant="primary" className="w-full bg-rose-600 hover:bg-rose-700 shadow-lg shadow-rose-500/20 text-[10px] font-black uppercase tracking-widest">Transmit_Signal</Button>
+                <Button variant="primary" className="w-full bg-rose-600 hover:bg-rose-700 shadow-lg shadow-rose-500/20 text-[10px] font-black uppercase tracking-widest">Submit Feedback</Button>
               </Card>
             </section>
           </div>

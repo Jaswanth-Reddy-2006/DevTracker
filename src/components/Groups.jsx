@@ -64,14 +64,14 @@ export default function Groups() {
           <div className="flex items-center gap-2 mb-2">
             <div className="w-2 h-6 bg-blue-600 rounded-full"></div>
             <h1 className="text-4xl font-black tracking-tighter uppercase" style={{ color: 'var(--text-primary)' }}>
-              SQUAD_GRID
+              Squad Grid
             </h1>
           </div>
           <p className="text-[10px] font-black uppercase tracking-[0.3em]" style={{ color: 'var(--text-tertiary)' }}>Collaborative performance and collective scaling</p>
         </div>
         <div className="flex gap-4">
-          <Button onClick={() => setShowJoinModal(true)} variant="outline" className="px-8 py-4 text-[10px] uppercase tracking-[0.2em] border-2">Sync_Node</Button>
-          <Button onClick={() => setShowCreateModal(true)} variant="primary" className="px-8 py-4 text-[10px] uppercase tracking-[0.2em] shadow-xl">Initialize_Cluster</Button>
+          <Button onClick={() => setShowJoinModal(true)} variant="outline" className="px-8 py-4 text-[10px] uppercase tracking-[0.2em] border-2">Join Squad</Button>
+          <Button onClick={() => setShowCreateModal(true)} variant="primary" className="px-8 py-4 text-[10px] uppercase tracking-[0.2em] shadow-xl">Create Squad</Button>
         </div>
       </header>
 
@@ -268,7 +268,7 @@ export default function Groups() {
           <form onSubmit={handleCreateGroup} className="space-y-6">
             <div>
               <label className="block text-[10px] font-black uppercase tracking-[0.2em] text-[var(--text-tertiary)] mb-2">Network Alias</label>
-              <input type="text" value={newGroupName} onChange={e => setNewGroupName(e.target.value)} className="w-full bg-[var(--bg-tertiary)] border-2 border-[var(--border-color)] rounded-xl px-5 py-4 text-sm font-bold focus:outline-none focus:border-blue-500/50" placeholder="OMEGA_SQUAD" />
+              <input type="text" value={newGroupName} onChange={e => setNewGroupName(e.target.value)} className="w-full bg-[var(--bg-tertiary)] border-2 border-[var(--border-color)] rounded-xl px-5 py-4 text-sm font-bold focus:outline-none focus:border-blue-500/50" placeholder="Enter Squad Name" />
             </div>
             <div>
               <label className="block text-[10px] font-black uppercase tracking-[0.2em] text-[var(--text-tertiary)] mb-2">Mission Parameters</label>
@@ -284,7 +284,7 @@ export default function Groups() {
           <form onSubmit={handleJoinGroup} className="space-y-6">
             <div>
               <label className="block text-[10px] font-black uppercase tracking-[0.2em] text-[var(--text-tertiary)] mb-2">Cluster ID</label>
-              <input type="text" value={joinCode} onChange={e => setJoinCode(e.target.value)} className="w-full bg-[var(--bg-tertiary)] border-2 border-[var(--border-color)] rounded-xl px-5 py-4 text-sm font-black focus:outline-none focus:border-blue-500/50" placeholder="PROTOCOL_HASH" />
+              <input type="text" value={joinCode} onChange={e => setJoinCode(e.target.value)} className="w-full bg-[var(--bg-tertiary)] border-2 border-[var(--border-color)] rounded-xl px-5 py-4 text-sm font-black focus:outline-none focus:border-blue-500/50" placeholder="Enter Group ID" />
             </div>
             <Button type="submit" variant="primary" className="w-full py-4 uppercase tracking-widest">Establish Connection</Button>
           </form>

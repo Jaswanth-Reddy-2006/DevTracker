@@ -33,7 +33,7 @@ export default function Contact() {
           <header className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-              <span className="text-[9px] font-black text-blue-500 uppercase tracking-[0.3em]">Channel_Open</span>
+              <span className="text-[9px] font-black text-blue-500 uppercase tracking-[0.3em]">Channel Open</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-none mb-6">
               CONTACT <br />

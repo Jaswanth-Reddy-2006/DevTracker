@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { emitEvent } from '../utils/eventClient'
 import Modal from './ui/Modal'
 
 export default function AddTaskModal({ onClose, onAdd, taskToEdit }) {
@@ -58,20 +59,33 @@ export default function AddTaskModal({ onClose, onAdd, taskToEdit }) {
       onAdd({ ...taskToEdit, ...processedData })
     } else {
       onAdd(processedData)
+      // Emit a creation event for analytics/tracking
+      try {
+        emitEvent('task.created', {
+          name: processedData.name,
+          activityType: processedData.activityType,
+          difficulty: processedData.difficulty,
+          priority: processedData.priority,
+          tags: processedData.tags,
+          targetDuration: processedData.targetDuration
+        })
+      } catch (err) {
+        console.warn('event emit failed', err)
+      }
     }
 
     onClose()
   }
 
   return (
-    <Modal onClose={onClose} title={isEdit ? 'RECONFIG_PROTOCOL' : 'INITIALIZE_OBJECTIVE'}>
+    <Modal onClose={onClose} title={isEdit ? 'Edit Task' : 'New Task'}>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <div className="flex justify-between items-center mb-2">
             <label className="text-[10px] font-black uppercase tracking-[0.2em]" style={{ color: 'var(--text-tertiary)' }}>
-              Objective_Designation
+              Task Name
             </label>
-            <span className="text-[9px] font-black uppercase text-blue-500">Required_Field</span>
+            <span className="text-[9px] font-black uppercase text-blue-500">Required</span>
           </div>
           <input
             type="text"
@@ -290,7 +304,7 @@ export default function AddTaskModal({ onClose, onAdd, taskToEdit }) {
             type="submit"
             className="flex-1 py-4 rounded-2xl bg-blue-600 text-white font-black uppercase tracking-[0.2em] text-[10px] hover:bg-blue-700 transition-all shadow-xl shadow-blue-500/20"
           >
-            {isEdit ? 'Re-Sync_Entry' : 'Establish_Objective'}
+            {isEdit ? 'Update Task' : 'Create Task'}
           </button>
         </div>
       </form>

@@ -1,0 +1,12 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer turquoise arrow/chevron -->
+  <path d="M 50 80 L 100 50 L 100 80 L 150 80 L 100 130 L 100 100 L 50 100 Z" fill="#14b8a6" opacity="0.9"/>
+  
+  <!-- Inner dark navy arrow/chevron -->
+  <path d="M 80 110 L 100 95 L 100 110 L 120 110 L 100 140 L 100 125 L 80 125 Z" fill="#001f3f" opacity="0.95"/>
+  
+  <!-- Pixelated effect dots (top left) -->
+  <rect x="55" y="55" width="8" height="8" fill="#14b8a6" opacity="0.7"/>
+  <rect x="65" y="50" width="8" height="8" fill="#14b8a6" opacity="0.6"/>
+  <rect x="45" y="65" width="8" height="8" fill="#14b8a6" opacity="0.5"/>
+</svg>

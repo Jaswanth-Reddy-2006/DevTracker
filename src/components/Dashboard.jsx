@@ -338,7 +338,7 @@ export default function Dashboard() {
             <div className="flex justify-between items-center border-b border-dashed border-[var(--border-color)] pb-4">
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-6 bg-blue-500 rounded-full"></div>
-                <h3 className="text-xl font-black tracking-tight uppercase text-blue-500">Signal_Stream</h3>
+                <h3 className="text-xl font-black tracking-tight uppercase text-blue-500">Activity Stream</h3>
               </div>
               <div className="flex gap-1.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-[pulse_1.5s_infinite]"></div>
@@ -359,7 +359,7 @@ export default function Dashboard() {
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="text-[var(--text-tertiary)] uppercase tracking-[0.2em] text-[8px] opacity-0 group-hover:opacity-100 transition-opacity">Node_Valid</span>
+                      <span className="text-[var(--text-tertiary)] uppercase tracking-[0.2em] text-[8px] opacity-0 group-hover:opacity-100 transition-opacity">Verified</span>
                       <div className={`w-1 h-1 rounded-full shadow-[0_0_5px_rgba(var(--accent-primary-rgb),0.5)] ${
                         act.type === 'active' ? 'bg-green-500' : act.type === 'educational' ? 'bg-blue-500' : 'bg-red-500'
                       }`}></div>

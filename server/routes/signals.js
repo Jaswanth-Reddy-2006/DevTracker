@@ -32,6 +32,19 @@ router.post('/', verifyToken, async (req, res) => {
             timestamp: Date.now()
         };
 
+        // Dev fallback: store in-memory when Firebase not available
+        if (process.env.DISABLE_AUTH === 'true') {
+            // store per-user in-memory
+            if (!global.__DEV_SIGNALS__) global.__DEV_SIGNALS__ = new Map();
+            const m = global.__DEV_SIGNALS__
+            if (!m.has(userId)) m.set(userId, [])
+            const arr = m.get(userId)
+            const id = Date.now().toString()
+            const entry = { id, ...signalData }
+            arr.unshift(entry)
+            return res.status(201).json({ message: 'Signal processed (dev)', id, signal: entry })
+        }
+
         const docRef = await db.collection('signals').add(signalData);
         res.status(201).json({ message: 'Signal processed', id: docRef.id, signal: signalData });
     } catch (error) {
@@ -44,6 +57,11 @@ router.post('/', verifyToken, async (req, res) => {
 router.get('/', verifyToken, async (req, res) => {
     try {
         const userId = req.user.uid;
+        if (process.env.DISABLE_AUTH === 'true') {
+            const m = global.__DEV_SIGNALS__ || new Map()
+            const arr = m.get(userId) || []
+            return res.json(arr.slice(0,100))
+        }
         const signalsSnapshot = await db.collection('signals')
             .where('userId', '==', userId)
             .orderBy('timestamp', 'desc')

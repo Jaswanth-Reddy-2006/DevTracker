@@ -23,19 +23,19 @@ export default function Layout({ children, user }) {
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(37,99,235,0.4)]"></div>
                 <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[var(--text-tertiary)]">
-                  DEVTRACKER_CORE_v1.0.4
+                  DevTrack • v1.0.4
                 </p>
               </div>
               <div className="h-4 w-px bg-[var(--border-color)] hidden sm:block"></div>
               <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[var(--text-tertiary)] hidden sm:block">
-                NODE_STABILITY: 99.9%
+                System Health: 99.9%
               </p>
             </div>
             
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-color)]">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                <p className="text-[9px] font-black uppercase tracking-widest text-green-500">MAINFRAME_ONLINE</p>
+                <p className="text-[9px] font-black uppercase tracking-widest text-green-500">System Online</p>
               </div>
               <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[var(--text-tertiary)] opacity-40">
                 &copy; {new Date().getFullYear()}

@@ -18,6 +18,7 @@ import Contact from './components/Contact'
 import HowToUse from './components/HowToUse'
 import Feedback from './components/Feedback'
 import ActivityTracker from './components/ActivityTracker'
+import AnalyticsMock from './components/mock/AnalyticsMock'
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, user } = useContext(AppContext)
@@ -48,6 +49,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/analytics"
+            element={
+              <ProtectedRoute>
+                <AnalyticsMock />
               </ProtectedRoute>
             }
           />

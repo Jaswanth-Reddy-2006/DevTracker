@@ -1,6 +1,7 @@
 import express from 'express';
 import { db } from '../config/firebase.js';
 import { verifyToken } from '../middleware/auth.js';
+import devStore from '../lib/devStore.js'
 
 const router = express.Router();
 
@@ -8,6 +9,10 @@ const router = express.Router();
 router.get('/', verifyToken, async (req, res) => {
     try {
         const userId = req.user.uid;
+        if (process.env.DISABLE_AUTH === 'true') {
+            const tasks = await devStore.getTasks(userId)
+            return res.json(tasks)
+        }
         const tasksSnapshot = await db.collection('tasks').where('userId', '==', userId).get();
         const tasks = tasksSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         res.json(tasks);
@@ -22,6 +27,10 @@ router.post('/', verifyToken, async (req, res) => {
     try {
         const userId = req.user.uid;
         const taskData = { ...req.body, userId, createdAt: Date.now() };
+        if (process.env.DISABLE_AUTH === 'true') {
+            const created = await devStore.addTask(userId, taskData)
+            return res.status(201).json(created)
+        }
         const docRef = await db.collection('tasks').add(taskData);
         res.status(201).json({ id: docRef.id, ...taskData });
     } catch (error) {
@@ -35,6 +44,14 @@ router.put('/:id', verifyToken, async (req, res) => {
     try {
         const userId = req.user.uid;
         const taskId = req.params.id;
+        if (process.env.DISABLE_AUTH === 'true') {
+            try {
+                const updated = await devStore.updateTask(userId, taskId, req.body)
+                return res.json({ message: 'Task updated successfully', task: updated })
+            } catch (err) {
+                return res.status(404).json({ error: 'Task not found' })
+            }
+        }
         const taskRef = db.collection('tasks').doc(taskId);
         const doc = await taskRef.get();
 
@@ -85,6 +102,15 @@ router.post('/:id/progress', verifyToken, async (req, res) => {
         const userId = req.user.uid;
         const taskId = req.params.id;
         const { progress } = req.body;
+        if (process.env.DISABLE_AUTH === 'true') {
+            try {
+                const updated = await devStore.updateTask(userId, taskId, { progress })
+                const newEntry = { date: new Date().toISOString().split('T')[0], value: progress, timestamp: Date.now() }
+                return res.json({ message: 'Progress added successfully', entry: newEntry, task: updated })
+            } catch (err) {
+                return res.status(404).json({ error: 'Task not found' })
+            }
+        }
         const taskRef = db.collection('tasks').doc(taskId);
         const doc = await taskRef.get();
 
@@ -119,6 +145,14 @@ router.delete('/:id', verifyToken, async (req, res) => {
     try {
         const userId = req.user.uid;
         const taskId = req.params.id;
+        if (process.env.DISABLE_AUTH === 'true') {
+            try {
+                await devStore.deleteTask(userId, taskId)
+                return res.json({ message: 'Task deleted successfully' })
+            } catch (err) {
+                return res.status(404).json({ error: 'Task not found' })
+            }
+        }
         const taskRef = db.collection('tasks').doc(taskId);
         const doc = await taskRef.get();
 

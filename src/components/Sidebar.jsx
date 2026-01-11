@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import devtrackLogo from '../assets/devtrack-logo.svg'
 
 export default function Sidebar() {
   const location = useLocation()
@@ -19,12 +20,8 @@ export default function Sidebar() {
     >
       <div className="absolute inset-0 mainframe-grid opacity-5 pointer-events-none"></div>
       
-      <div className="p-8 flex items-center gap-3 relative z-10">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-lg shadow-blue-500/30 group cursor-pointer" onClick={() => window.location.href = '/'}>
-          <svg className="w-6 h-6 text-white group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-        </div>
+      <div className="p-8 flex items-center gap-3 relative z-10 cursor-pointer" onClick={() => window.location.href = '/'}>
+        <img src={devtrackLogo} alt="DevTrack Logo" className="w-12 h-12 transition-transform hover:rotate-12" />
         <div>
           <h1 className="text-2xl font-black bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent tracking-tighter uppercase leading-none">DevTracker</h1>
           <p className="text-[8px] font-black text-blue-500/50 uppercase tracking-[0.4em] mt-1">v1.0.4</p>

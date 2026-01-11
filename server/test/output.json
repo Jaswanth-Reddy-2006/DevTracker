@@ -1,0 +1,290 @@
+{
+  "dailyAggs": [
+    [
+      "user_1_Algorithms_2026-01-04",
+      {
+        "task_points": 6,
+        "time_seconds": 5400,
+        "tasks_completed": 2
+      }
+    ],
+    [
+      "user_1_Algorithms_2026-01-03",
+      {
+        "task_points": 6,
+        "time_seconds": 5400,
+        "tasks_completed": 2
+      }
+    ],
+    [
+      "user_1_Algorithms_2026-01-02",
+      {
+        "task_points": 6,
+        "time_seconds": 5400,
+        "tasks_completed": 2
+      }
+    ],
+    [
+      "user_1_Algorithms_2026-01-01",
+      {
+        "task_points": 6,
+        "time_seconds": 5400,
+        "tasks_completed": 2
+      }
+    ],
+    [
+      "user_1_Algorithms_2025-12-31",
+      {
+        "task_points": 6,
+        "time_seconds": 5400,
+        "tasks_completed": 2
+      }
+    ],
+    [
+      "user_1_Algorithms_2025-12-30",
+      {
+        "task_points": 6,
+        "time_seconds": 5400,
+        "tasks_completed": 2
+      }
+    ],
+    [
+      "user_1_Algorithms_2025-12-29",
+      {
+        "task_points": 6,
+        "time_seconds": 5400,
+        "tasks_completed": 2
+      }
+    ],
+    [
+      "user_1_Algorithms_2026-01-11",
+      {
+        "task_points": 1,
+        "time_seconds": 1200,
+        "tasks_completed": 1
+      }
+    ],
+    [
+      "user_1_DataStructures_2026-01-11",
+      {
+        "task_points": 2,
+        "time_seconds": 1800,
+        "tasks_completed": 1
+      }
+    ],
+    [
+      "user_1_DataStructures_2026-01-10",
+      {
+        "task_points": 2,
+        "time_seconds": 1800,
+        "tasks_completed": 1
+      }
+    ],
+    [
+      "user_1_Algorithms_2026-01-09",
+      {
+        "task_points": 1,
+        "time_seconds": 1200,
+        "tasks_completed": 1
+      }
+    ],
+    [
+      "user_1_DataStructures_2026-01-09",
+      {
+        "task_points": 2,
+        "time_seconds": 1800,
+        "tasks_completed": 1
+      }
+    ],
+    [
+      "user_1_DataStructures_2026-01-08",
+      {
+        "task_points": 2,
+        "time_seconds": 1800,
+        "tasks_completed": 1
+      }
+    ],
+    [
+      "user_1_Algorithms_2026-01-07",
+      {
+        "task_points": 1,
+        "time_seconds": 1200,
+        "tasks_completed": 1
+      }
+    ],
+    [
+      "user_1_DataStructures_2026-01-07",
+      {
+        "task_points": 2,
+        "time_seconds": 1800,
+        "tasks_completed": 1
+      }
+    ],
+    [
+      "user_1_DataStructures_2026-01-06",
+      {
+        "task_points": 2,
+        "time_seconds": 1800,
+        "tasks_completed": 1
+      }
+    ],
+    [
+      "user_1_Algorithms_2026-01-05",
+      {
+        "task_points": 1,
+        "time_seconds": 1200,
+        "tasks_completed": 1
+      }
+    ],
+    [
+      "user_1_DataStructures_2026-01-05",
+      {
+        "task_points": 2,
+        "time_seconds": 1800,
+        "tasks_completed": 1
+      }
+    ]
+  ],
+  "mastery": [
+    [
+      "user_1_Algorithms",
+      {
+        "decayed_sum": 28.533395030177758,
+        "mastery": 100,
+        "lastActive": "2026-01-05"
+      }
+    ],
+    [
+      "user_1_DataStructures",
+      {
+        "decayed_sum": 12.066508156249999,
+        "mastery": 100,
+        "lastActive": "2026-01-05"
+      }
+    ]
+  ],
+  "userDaily": [
+    [
+      "user_1_summary_2026-01-04",
+      {
+        "tasks_completed": 2,
+        "time_seconds": 5400
+      }
+    ],
+    [
+      "user_1_summary_2026-01-03",
+      {
+        "tasks_completed": 2,
+        "time_seconds": 5400
+      }
+    ],
+    [
+      "user_1_summary_2026-01-02",
+      {
+        "tasks_completed": 2,
+        "time_seconds": 5400
+      }
+    ],
+    [
+      "user_1_summary_2026-01-01",
+      {
+        "tasks_completed": 2,
+        "time_seconds": 5400
+      }
+    ],
+    [
+      "user_1_summary_2025-12-31",
+      {
+        "tasks_completed": 2,
+        "time_seconds": 5400
+      }
+    ],
+    [
+      "user_1_summary_2025-12-30",
+      {
+        "tasks_completed": 2,
+        "time_seconds": 5400
+      }
+    ],
+    [
+      "user_1_summary_2025-12-29",
+      {
+        "tasks_completed": 2,
+        "time_seconds": 5400
+      }
+    ],
+    [
+      "user_1_summary_2026-01-11",
+      {
+        "tasks_completed": 2,
+        "time_seconds": 3000
+      }
+    ],
+    [
+      "user_1_summary_2026-01-10",
+      {
+        "tasks_completed": 1,
+        "time_seconds": 1800
+      }
+    ],
+    [
+      "user_1_summary_2026-01-09",
+      {
+        "tasks_completed": 2,
+        "time_seconds": 3000
+      }
+    ],
+    [
+      "user_1_summary_2026-01-08",
+      {
+        "tasks_completed": 1,
+        "time_seconds": 1800
+      }
+    ],
+    [
+      "user_1_summary_2026-01-07",
+      {
+        "tasks_completed": 2,
+        "time_seconds": 3000
+      }
+    ],
+    [
+      "user_1_summary_2026-01-06",
+      {
+        "tasks_completed": 1,
+        "time_seconds": 1800
+      }
+    ],
+    [
+      "user_1_summary_2026-01-05",
+      {
+        "tasks_completed": 2,
+        "time_seconds": 3000
+      }
+    ]
+  ],
+  "streaks": [
+    [
+      "user_1",
+      {
+        "current_streak": 1,
+        "longest_streak": 1,
+        "last_active_date": "2026-01-05"
+      }
+    ]
+  ],
+  "insights": [
+    {
+      "userId": "user_1",
+      "skillId": "Algorithms",
+      "key": "skill_drop",
+      "severity": "critical",
+      "message": "Algorithms dropped -90% week-over-week",
+      "data": {
+        "prev7": 42,
+        "last7": 4,
+        "drop": -0.9047619047619048
+      }
+    }
+  ]
+}

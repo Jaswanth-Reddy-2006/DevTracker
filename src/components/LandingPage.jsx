@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect, useContext } from 'react'
 import { AppContext } from '../context/AppContext'
+import devtrackLogo from '../assets/devtrack-logo.svg'
 
 export default function LandingPage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -36,9 +37,7 @@ export default function LandingPage() {
       {/* Navigation */}
       <nav className="relative z-50 flex justify-between items-center px-6 md:px-12 py-6 backdrop-blur-md border-b border-[var(--border-color)] bg-[var(--bg-primary)]/50">
         <div className="flex items-center gap-3 group cursor-pointer" onClick={() => navigate('/')}>
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:rotate-12 transition-transform">
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-          </div>
+          <img src={devtrackLogo} alt="DevTrack Logo" className="w-12 h-12 transition-transform group-hover:rotate-12" />
           <span className="text-2xl font-black tracking-tighter text-gradient">DEVTRACKER</span>
         </div>
         <div className="flex items-center gap-4 md:gap-8">

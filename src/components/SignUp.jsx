@@ -70,7 +70,7 @@ export default function SignUp() {
             </svg>
           </div>
           <h1 className="text-5xl font-black text-gradient tracking-tighter mb-3 uppercase">DevTracker</h1>
-          <p className="text-[10px] font-black uppercase tracking-[0.3em] opacity-70" style={{ color: 'var(--text-tertiary)' }}>Productivity_Ecosystem</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.3em] opacity-70" style={{ color: 'var(--text-tertiary)' }}>Team Collaboration Platform</p>
         </div>
         
         <Card padding={true} className="border border-[var(--border-color)] shadow-2xl backdrop-blur-xl bg-[var(--bg-secondary)]/60 relative overflow-hidden group">

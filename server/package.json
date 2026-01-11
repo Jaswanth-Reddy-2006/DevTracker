@@ -7,6 +7,9 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node --watch index.js",
+    "worker": "node worker/processEvents.js",
+    "worker:run": "node worker/processEvents.js",
+    "simulate": "node test/simulateLocalRun.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,6 +19,8 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
-    "firebase-admin": "^13.6.0"
+    "firebase-admin": "^13.6.0",
+    "ioredis": "^5.3.2"
+    ,"prom-client": "^14.0.1"
   }
 }

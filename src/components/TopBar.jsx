@@ -1,6 +1,7 @@
 import { useAppData } from '../hooks/useAppData'
 import { useMemo, useContext } from 'react'
 import { AppContext } from '../context/AppContext'
+import devtrackLogo from '../assets/devtrack-logo.svg'
 
 export default function TopBar({ user }) {
   const { developerScore, tasks } = useAppData()
@@ -24,12 +25,13 @@ export default function TopBar({ user }) {
       }}
     >
       <div className="flex items-center gap-6">
+        <img src={devtrackLogo} alt="DevTrack Logo" className="h-14 w-14" />
         <div className="flex flex-col">
-          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-500 mb-0.5 opacity-70">Workspace</span>
+          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-500 mb-0.5 opacity-70">Session</span>
           <div className="flex items-center gap-2">
-            <span className="text-sm font-black text-[var(--text-primary)] uppercase tracking-tighter">Main Terminal</span>
+            <span className="text-sm font-black text-[var(--text-primary)] uppercase tracking-tighter">Active Terminal</span>
             <div className="px-1.5 py-0.5 rounded bg-blue-500/10 border border-blue-500/20">
-              <span className="text-[8px] font-black text-blue-500 tabular-nums">NODE_ID: {Math.floor(Math.random() * 9000) + 1000}</span>
+              <span className="text-[8px] font-black text-blue-500 tabular-nums">SessionID: {Math.floor(Math.random() * 9000) + 1000}</span>
             </div>
           </div>
         </div>
