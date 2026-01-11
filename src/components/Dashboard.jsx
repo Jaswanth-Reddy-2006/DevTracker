@@ -126,10 +126,10 @@ export default function Dashboard() {
             <div className="w-2.5 h-8 bg-gradient-to-b from-blue-600 to-indigo-700 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.4)]"></div>
             <div>
               <h1 className="text-4xl font-black tracking-tighter uppercase leading-none" style={{ color: 'var(--text-primary)' }}>
-                SYSTEMS_OVERVIEW
+                Dashboard
               </h1>
               <div className="flex items-center gap-2 mt-1">
-                <span className="text-[8px] font-black text-blue-500 uppercase tracking-[0.4em]">Core_Active</span>
+                <span className="text-[8px] font-black text-blue-500 uppercase tracking-[0.4em] opacity-70">Real-time Metrics</span>
                 <div className="w-1 h-1 bg-blue-500 rounded-full animate-ping"></div>
               </div>
             </div>
@@ -139,13 +139,13 @@ export default function Dashboard() {
         <div className="flex items-center gap-4 bg-[var(--bg-secondary)] p-2 rounded-3xl border border-[var(--border-color)] shadow-xl animate-fadeIn">
           <div className={`flex items-center gap-3 px-6 py-3 rounded-2xl border ${isTracking ? 'bg-green-500/10 border-green-500/20 text-green-600 dark:text-green-400' : 'bg-red-500/10 border-red-500/20 text-red-600 dark:text-red-400'}`}>
             <span className={`w-2 h-2 rounded-full ${isTracking ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`}></span>
-            <span className="text-[9px] font-black uppercase tracking-[0.2em]">{isTracking ? 'Telemetry Active' : 'Telemetry Paused'}</span>
+            <span className="text-[9px] font-black uppercase tracking-[0.2em]">{isTracking ? 'Tracking Active' : 'Tracking Paused'}</span>
           </div>
           <button 
             onClick={toggleTracking}
-            className={`px-8 py-3 rounded-2xl font-black text-[9px] uppercase tracking-[0.2em] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg ${isTracking ? 'bg-[var(--bg-tertiary)] text-[var(--text-primary)] border border-[var(--border-color)]' : 'bg-blue-600 text-white'}`}
+            className={`px-8 py-3 rounded-2xl font-black text-[9px] uppercase tracking-[0.2em] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg ${isTracking ? 'bg-[var(--bg-tertiary)] text-[var(--text-primary)] border border-[var(--border-color)] hover:bg-[var(--bg-secondary)]' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
           >
-            {isTracking ? 'Kill_Signal' : 'Initiate_Scan'}
+            {isTracking ? 'Stop Tracking' : 'Start Tracking'}
           </button>
         </div>
       </header>
@@ -156,7 +156,7 @@ export default function Dashboard() {
           <div className="space-y-8 relative z-10">
             <div className="flex justify-between items-center">
               <div>
-                <h3 className="text-2xl font-black tracking-tight" style={{ color: 'var(--text-primary)' }}>Cognitive Load</h3>
+                <h3 className="text-2xl font-black tracking-tight" style={{ color: 'var(--text-primary)' }}>Focus Analysis</h3>
                 <p className="text-xs font-bold uppercase tracking-widest mt-1" style={{ color: 'var(--text-tertiary)' }}>Productivity Stream</p>
               </div>
               <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center border border-blue-500/20">
@@ -167,7 +167,7 @@ export default function Dashboard() {
             <div className="space-y-6">
               <div>
                 <div className="flex justify-between mb-2 items-end">
-                  <span className="text-xs font-black uppercase tracking-widest" style={{ color: 'var(--text-secondary)' }}>Deep Learning</span>
+                  <span className="text-xs font-black uppercase tracking-widest" style={{ color: 'var(--text-secondary)' }}>Productive Time</span>
                   <span className="text-sm font-black text-blue-500">{formatTime(educationalTimeStats)}</span>
                 </div>
                 <ProgressBar progress={Math.min((educationalTimeStats / 60) * 100, 100)} color="from-blue-500 to-indigo-500" showLabel={false} />
@@ -175,7 +175,7 @@ export default function Dashboard() {
 
               <div>
                 <div className="flex justify-between mb-2 items-end">
-                  <span className="text-xs font-black uppercase tracking-widest" style={{ color: 'var(--text-secondary)' }}>Signal Noise</span>
+                  <span className="text-xs font-black uppercase tracking-widest" style={{ color: 'var(--text-secondary)' }}>Distractions</span>
                   <span className="text-sm font-black text-red-500">{formatTime(distractionTimeStats)}</span>
                 </div>
                 <ProgressBar progress={Math.min((distractionTimeStats / 60) * 100, 100)} color="from-red-500 to-rose-500" showLabel={false} />
@@ -183,7 +183,7 @@ export default function Dashboard() {
 
               <div className="pt-6 mt-2 border-t border-[var(--border-color)] border-dashed">
                 <div className="flex justify-between items-center">
-                  <span className="text-xs font-black uppercase tracking-widest" style={{ color: 'var(--text-tertiary)' }}>Core Focus Index</span>
+                  <span className="text-xs font-black uppercase tracking-widest" style={{ color: 'var(--text-tertiary)' }}>Focus Score</span>
                   <div className="flex items-end gap-1">
                     <span className="text-4xl font-black text-gradient leading-none">
                       {Math.round(focusStats.focusRatio * 100)}
